@@ -3,7 +3,7 @@
 
 FitTrack is a modern, user-friendly fitness tracker application built using Python and PyQt5. It allows users to log and monitor their fitness activities such as calories burned, distance covered, and workout descriptions.
 
-![FitTrack Logo](images/logo.png)
+![FitTrack Logo](https://i.postimg.cc/KvXnwtqW/logo.jpg)
 
 ---
 
@@ -83,7 +83,7 @@ pip install PyQt5
 ## Screenshots
 
 ### Login Screen
-![Login Screen](images/login_screen.png)
+![Login Screen](https://i.postimg.cc/WbMMvtx1/Screenshot-2024-11-23-105041.png)
 
 ### Main Dashboard
 ![Main Dashboard](images/main_dashboard.png)
@@ -112,4 +112,6 @@ We’re a passionate team of developers, designers, and analysts. Here’s a bit
 
 
 
+## Thank You 
 
+Thank you for taking the time to explore this project 😊
