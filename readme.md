@@ -1,72 +1,103 @@
 
 # 💪 FitTrack - Your Personal Fitness Tracker
 
-<img src="https://i.postimg.cc/4x2hjbBZ/LOGO-for-a-fitness-tracker-application-built-using-Python.jpg" width="300" height="250"/>
- <!-- Replace with your logo if you have one -->
+FitTrack is a modern, user-friendly fitness tracker application built using Python and PyQt5. It allows users to log and monitor their fitness activities such as calories burned, distance covered, and workout descriptions.
 
-FitTrack is a powerful and user-friendly desktop application that helps you keep track of your fitness journey. Built with **Python** and **PyQt5**, this tool allows users to log daily workouts, track calories burned, and visualize progress with easy-to-read graphs. Whether you're a fitness enthusiast or just starting your journey, FitTrack is designed to make tracking your fitness goals simple and effective.
+![FitTrack Logo](images/logo.png)
 
+---
 
-## 🚀 Features
+## Features
 
-- 📅 **Daily Workout Logging**: Track your workout date, calories burned, distance covered, and add workout descriptions.
-- 📊 **Data Visualization**: Get a scatter plot view of calories burned vs. distance to help visualize your progress.
-- 💾 **SQLite Database Integration**: All data is securely stored in an SQLite database.
-- 🌙 **Dark Mode**: Switch between light and dark themes to match your style.
-- 🗑️ **Data Management**: Easily add, delete, and clear workout entries with one click.
+- **User Authentication**: Signup and login functionality with secure credentials.
+- **Workout Tracking**: Log details like calories burned, distance covered, and workout descriptions.
+- **Database Integration**: Persistent data storage using SQLite.
+- **Custom Styling**: Modern UI with CSS-like styling.
+- **Table Display**: View all workout records in a sortable and scrollable table.
 
-## 🛠️ Requirements
+---
 
-- **Python**
-- **PyQt5**
-- **Matplotlib**
+## Learnings
 
-Install dependencies with:
+1. **GUI Development**:
+   - Building a responsive and interactive GUI using PyQt5.
+   - Customizing components with `setStyleSheet` for enhanced aesthetics.
+
+2. **Database Integration**:
+   - Using SQLite with PyQt5 for data persistence.
+   - Structuring and querying tables efficiently.
+
+3. **User Authentication**:
+   - Implementing secure user login and signup features.
+
+4. **Code Organization**:
+   - Modular structure for readability and maintainability.
+
+5. **Error Handling**:
+   - User input validation and handling database errors gracefully.
+
+---
+
+## Requirements
+
+To run this project, ensure the following dependencies are installed:
+
+- **Python** (>=3.6)
+- **PyQt5** (>=5.15)
+- **SQLite** (comes pre-installed with Python)
+
+Install dependencies using `pip`:
+
 ```bash
-pip install pyqt5
-pip install pyqt5-sql
+pip install PyQt5
 ```
 
-## 📥 Getting Started
+---
 
-### 1️⃣ Clone the Repository
-```bash
-git clone https://github.com/vaibhavguptahere/Fitness-Tracker.git
-cd main
-```
+## File Descriptions
 
-### 2️⃣ Set Up the Database
-The application will automatically create the SQLite database (`fitness.db`) on the first run. If you'd like to start fresh, just delete the database file and restart the app.
+| **File Name**       | **Description**                                                                 |
+|----------------------|---------------------------------------------------------------------------------|
+| `main.py`           | The main entry point for the application. Initializes the GUI and database.     |
+| `fittrack.db`       | SQLite database file for storing user and workout details.                      |
+| `logo.ico`          | Application icon file.                                                         |
+| `bg.ico`            | Background image for the login dialog.                                         |
 
-### 3️⃣ Run the Application
-```bash
-python main.py
-```
+---
 
-### 🏃 Usage Guide
+## Setup Instructions
 
-1. **Log Workout**: Select a date, enter calories burned, distance covered, and add a description.
-2. **Add Workout**: Click the "Add" button to save your workout entry to the database.
-3. **Visualize Progress**: Click "Submit" to view a scatter plot of calories vs. distance.
-4. **Dark Mode**: Toggle dark mode on or off as you prefer.
-5. **Manage Entries**: Use the Delete button to remove selected entries and Clear to reset the form.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/vaibhavguptahere/FitTrack.git
+   cd FitTrack
+   ```
 
-## 📸 Screenshots & Demo
+2. Run the application:
+   ```bash
+   python main.py
+   ```
 
-### Main Interface
-![FitTrack Main Interface](https://i.postimg.cc/cCm858Xn/Screenshot-2024-11-10-190906.png) <!-- Replace with actual screenshot of your app -->
+---
 
-### Data Visualization
-![FitTrack Graph Visualization](https://i.postimg.cc/cH7Krnqb/Screenshot-2024-11-10-191257.png) <!-- Replace with actual screenshot of the graph -->
+## Screenshots
 
-### Dark Mode
-![FitTrack Dark Mode](https://i.postimg.cc/T3kJ3BjD/Screenshot-2024-11-10-191317.png) <!-- Replace with dark mode screenshot -->
+### Login Screen
+![Login Screen](images/login_screen.png)
 
-## 📂 Code Structure
+### Main Dashboard
+![Main Dashboard](images/main_dashboard.png)
 
-- **`main.py`**: Main application code.
-- **`readme.md`**: About the project.
-- - **`fitness.db`**: Database stored.
+---
+
+## Future Enhancements
+
+- **Export Feature**: Allow users to export their workout data as CSV files.
+- **Graphs and Analytics**: Visualize progress over time using graphs.
+- **Cloud Integration**: Sync data across devices using cloud storage.
+
+---
+
 
 ## 👥 Meet the Team
 
