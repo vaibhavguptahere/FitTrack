@@ -6,7 +6,6 @@
 
 FitTrack is a powerful and user-friendly desktop application that helps you keep track of your fitness journey. Built with **Python** and **PyQt5**, this tool allows users to log daily workouts, track calories burned, and visualize progress with easy-to-read graphs. Whether you're a fitness enthusiast or just starting your journey, FitTrack is designed to make tracking your fitness goals simple and effective.
 
-![FitTrack Screenshot](https://via.placeholder.com/800x400) <!-- Replace with actual screenshot of your app -->
 
 ## 🚀 Features
 
@@ -25,13 +24,14 @@ FitTrack is a powerful and user-friendly desktop application that helps you keep
 Install dependencies with:
 ```bash
 pip install pyqt5
+pip install pyqt5-sql
 ```
 
 ## 📥 Getting Started
 
 ### 1️⃣ Clone the Repository
 ```bash
-git clone https://github.com/your-username/fittrack.git
+git clone https://github.com/vaibhavguptahere/Fitness-Tracker.git
 cd main
 ```
 
@@ -54,22 +54,19 @@ python main.py
 ## 📸 Screenshots & Demo
 
 ### Main Interface
-![FitTrack Main Interface](https://via.placeholder.com/800x400) <!-- Replace with actual screenshot of your app -->
+![FitTrack Main Interface](https://i.postimg.cc/cCm858Xn/Screenshot-2024-11-10-190906.png) <!-- Replace with actual screenshot of your app -->
 
 ### Data Visualization
-![FitTrack Graph Visualization](https://via.placeholder.com/800x400) <!-- Replace with actual screenshot of the graph -->
+![FitTrack Graph Visualization](https://i.postimg.cc/cH7Krnqb/Screenshot-2024-11-10-191257.png) <!-- Replace with actual screenshot of the graph -->
 
 ### Dark Mode
-![FitTrack Dark Mode](https://via.placeholder.com/800x400) <!-- Replace with dark mode screenshot -->
-
-### Demo Animation
-![FitTrack Demo Animation](https://via.placeholder.com/400x300) <!-- Replace with GIF animation showing the app in action -->
+![FitTrack Dark Mode](https://i.postimg.cc/T3kJ3BjD/Screenshot-2024-11-10-191317.png) <!-- Replace with dark mode screenshot -->
 
 ## 📂 Code Structure
 
-- **`fittrack.py`**: Main application code.
-- **`fitness.db`**: SQLite database to store workout data.
-- **assets/**: (Optional) Directory for images, animations, and other resources.
+- **`main.py`**: Main application code.
+- **`readme.md`**: About the project.
+- - **`fitness.db`**: Database stored.
 
 ## 👥 Meet the Team
 
@@ -78,18 +75,10 @@ We’re a passionate team of developers, designers, and analysts. Here’s a bit
 | Name         | Role                  | GitHub Profile                           |
 |--------------|-----------------------|------------------------------------------|
 | 🚀 **Anshul Bhathija**     | Project Lead           | [GitHub](https://www.linkedin.com/in/anshul-bhathija-8229b0301/) |
-| 🖥️ **Vaibhav Gupta**     | Backend Developer      | [GitHub](https://www.linkedin.com/in/vaibhavguptahere-/) |
-| 🎨 **Durgesh**     | Frontend Developer     | [GitHub](https://github.com/) |
-| 📊 **Aditi**     | Data Analyst           | [GitHub](https://github.com/) |
+| 🖥️ **Vaibhav Gupta**     | Design & Code      | [GitHub](https://www.linkedin.com/in/vaibhavguptahere-/) |
+| 🎨 **Durgesh**     | Design & Code    | [GitHub](https://github.com/member3) |
+| 📊 **Aditi**     | Research & Analysis         | [GitHub](https://github.com/member4) |
 
-## 🤝 Contributing
 
-We welcome contributions! If you'd like to improve FitTrack, please follow these steps:
-
-1. **Fork the repository**.
-2. **Create a new branch** for your feature: `git checkout -b feature-name`.
-3. **Commit your changes**: `git commit -m "Add new feature"`.
-4. **Push to the branch**: `git push origin feature-name`.
-5. **Open a pull request**.
 
 
