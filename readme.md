@@ -86,7 +86,7 @@ pip install PyQt5
 ![Login Screen](https://i.postimg.cc/WbMMvtx1/Screenshot-2024-11-23-105041.png)
 
 ### Main Dashboard
-![Main Dashboard](images/main_dashboard.png)
+![Main Dashboard](https://i.postimg.cc/x8jhtmbp/Screenshot-2024-11-24-223914.png)
 
 ---
 
