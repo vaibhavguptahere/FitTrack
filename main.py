@@ -170,60 +170,64 @@ class FitTrack(QWidget):
         # Add CSS for the dashboard
         self.setStyleSheet("""
             QWidget {
-                background: qlineargradient(
-                    spread: pad, 
-                    x1: 0, y1: 0, x2: 1, y2: 1, 
-                    stop: 0 #1e1e2f, stop: 1 #252531
-                );  /* Gradient background */
-                border-radius: 10px;
-                padding: 20px;
-                color: #d1d1e0;  /* Light text for contrast */
-                font-family: 'Segoe UI', sans-serif; /* Modern font */
-            }
-            QLabel {
-                font-size: 20px;
-                color: #ffffff; /* Bright white for labels */
-                font-weight: bold;
-            }
-            QSpinBox, QLineEdit, QDateEdit {
-                font-size: 16px;
-                padding: 10px;
-                margin-bottom: 10px;
-                border: 1px solid #5c6bc0;  /* Soft blue border */
-                border-radius: 8px;
-                background-color: #2b2b3b;  /* Darker input background */
-                color: #d1d1e0;  /* Light input text */
-            }
-            QPushButton {
-                font-size: 18px;
-                color: #ffffff;
-                background-color: #5c6bc0;
-                padding: 12px 20px;
-                border: none;
-                border-radius: 8px;
-                cursor: pointer;
-                transition: all 0.3s ease;
-                font-weight: bold;
-            }
-            QPushButton:hover {
-                background-color: #7986cb; /* Lighter hover effect */
-            }
-            QPushButton:pressed {
-                background-color: #3f51b5; /* Deep blue on press */
-            }
-            QTableWidget {
-                border: 1px solid #424242;
-                margin-top: 20px;
-                background-color: #303040;
-                color: #d1d1e0;  /* Light text for table */
-                gridline-color: #5c6bc0;
-            }
-            QHeaderView::section {
-                background-color: #424242;
-                color: #ffffff;
-                border: none;
-            }
-        """)
+        background: qlineargradient(
+            spread: pad, 
+            x1: 0, y1: 0, x2: 1, y2: 1, 
+            stop: 0 #1e1e2f, stop: 1 #252531
+        );
+        color: #d1d1e0;  /* Light text for contrast */
+        font-family: 'Segoe UI', sans-serif; /* Modern font */
+        font-size: 16px;
+    }
+    QLabel {
+        font-size: 18px;
+        color: #ffffff;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+    QSpinBox, QLineEdit, QDateEdit {
+        font-size: 16px;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #5c6bc0;
+        border-radius: 8px;
+        background-color: #2b2b3b;
+        color: #d1d1e0;
+    }
+    QPushButton {
+        font-size: 18px;
+        color: #ffffff;
+        background-color: #5c6bc0;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+    QPushButton:hover {
+        background-color: #7986cb;
+    }
+    QPushButton:pressed {
+        background-color: #3f51b5;
+    }
+    QTableWidget {
+        border: 1px solid #424242;
+        margin-top: 10px;
+        background-color: #303040;
+        color: #d1d1e0;
+        gridline-color: #5c6bc0;
+        font-size: 14px;
+        border-radius: 8px;
+    }
+    QHeaderView::section {
+        background-color: #424242;
+        color: #ffffff;
+        border: none;
+        padding: 5px;
+    }
+""")
 
         # Layout
         main_layout = QVBoxLayout()
