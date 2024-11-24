@@ -1,11 +1,10 @@
-import sys
-from PyQt5.QtWidgets import (
-    QApplication, QDialog, QLineEdit, QLabel, QPushButton, QWidget, QTableWidget, QDateEdit, QSpinBox, QVBoxLayout, QHBoxLayout, QMessageBox, QTableWidgetItem
-)
+from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QHBoxLayout, QTableWidgetItem, QMessageBox, QDateEdit, QLineEdit, QSpinBox, QPushButton, QLabel, QTableWidget, QDialog
 from PyQt5.QtCore import QDate
 from PyQt5.QtSql import QSqlDatabase, QSqlQuery
-from PyQt5.QtWidgets import QApplication, QMainWindow  # Example imports; add others as needed
-from PyQt5.QtGui import QIcon  # Import QIcon
+from PyQt5.QtGui import QIcon
+import sys
+from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
+from matplotlib.figure import Figure
 
 # Login Dialog
 class LoginDialog(QDialog):
@@ -141,6 +140,7 @@ class FitTrack(QWidget):
             self.current_user = login_dialog.username_input.text()
             self.initUI()
             self.load_table()
+            self.update_graph()
         else:
             sys.exit(0)
 
@@ -170,104 +170,104 @@ class FitTrack(QWidget):
         # Add CSS for the dashboard
         self.setStyleSheet("""
             QWidget {
-            background: qlineargradient(
-                spread: pad, 
-                x1: 0, y1: 0, x2: 1, y2: 1, 
-                stop: 0 #1e1e2f, stop: 1 #252531
-            );  /* Gradient background */
-            border-radius: 10px;
-            padding: 20px;
-            color: #d1d1e0;  /* Light text for contrast */
-            font-family: 'Segoe UI', sans-serif; /* Modern font */
-        }
-        QLabel {
-            font-size: 20px;
-            color: #ffffff; /* Bright white for labels */
-            font-weight: bold;
-        }
-        QSpinBox, QLineEdit, QDateEdit {
-            font-size: 16px;
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #5c6bc0;  /* Soft blue border */
-            border-radius: 8px;
-            background-color: #2b2b3b;  /* Darker input background */
-            color: #d1d1e0;  /* Light input text */
-        }
-        QSpinBox::up-button, QSpinBox::down-button {
-            background-color: #5c6bc0; /* Match button styling */
-            border-radius: 5px;
-        }
-        QPushButton {
-            font-size: 18px;
-            color: #ffffff;
-            background-color: #5c6bc0;
-            padding: 12px 20px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-weight: bold;
-        }
-        QPushButton:hover {
-            background-color: #7986cb; /* Lighter hover effect */
-        }
-        QPushButton:pressed {
-            background-color: #3f51b5; /* Deep blue on press */
-        }
-        QTableWidget {
-            border: 1px solid #424242;
-            margin-top: 20px;
-            background-color: #303040;
-            color: #d1d1e0;  /* Light text for table */
-            gridline-color: #5c6bc0;
-        }
-        QHeaderView::section {
-            background-color: #424242;
-            color: #ffffff;
-            border: none;
-        }
+                background: qlineargradient(
+                    spread: pad, 
+                    x1: 0, y1: 0, x2: 1, y2: 1, 
+                    stop: 0 #1e1e2f, stop: 1 #252531
+                );  /* Gradient background */
+                border-radius: 10px;
+                padding: 20px;
+                color: #d1d1e0;  /* Light text for contrast */
+                font-family: 'Segoe UI', sans-serif; /* Modern font */
+            }
+            QLabel {
+                font-size: 20px;
+                color: #ffffff; /* Bright white for labels */
+                font-weight: bold;
+            }
+            QSpinBox, QLineEdit, QDateEdit {
+                font-size: 16px;
+                padding: 10px;
+                margin-bottom: 10px;
+                border: 1px solid #5c6bc0;  /* Soft blue border */
+                border-radius: 8px;
+                background-color: #2b2b3b;  /* Darker input background */
+                color: #d1d1e0;  /* Light input text */
+            }
+            QPushButton {
+                font-size: 18px;
+                color: #ffffff;
+                background-color: #5c6bc0;
+                padding: 12px 20px;
+                border: none;
+                border-radius: 8px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                font-weight: bold;
+            }
+            QPushButton:hover {
+                background-color: #7986cb; /* Lighter hover effect */
+            }
+            QPushButton:pressed {
+                background-color: #3f51b5; /* Deep blue on press */
+            }
+            QTableWidget {
+                border: 1px solid #424242;
+                margin-top: 20px;
+                background-color: #303040;
+                color: #d1d1e0;  /* Light text for table */
+                gridline-color: #5c6bc0;
+            }
+            QHeaderView::section {
+                background-color: #424242;
+                color: #ffffff;
+                border: none;
+            }
         """)
 
         # Layout
         main_layout = QVBoxLayout()
 
-        # Date Input
+        # Input Section
+        input_layout = QHBoxLayout()
         self.date_box = QDateEdit()
         self.date_box.setDate(QDate.currentDate())
 
-        # Calories Input
         self.kal_box = QSpinBox()
         self.kal_box.setRange(0, 10000)
 
-        # Distance Input
         self.distance_box = QLineEdit()
         self.distance_box.setPlaceholderText("Distance (in km)")
 
-        # Description Input
         self.description = QLineEdit()
         self.description.setPlaceholderText("Workout Description")
 
-        # Buttons
         self.add_button = QPushButton("Add Workout")
         self.add_button.clicked.connect(self.add_workout)
 
-        # Table
+        input_layout.addWidget(QLabel("Date:"))
+        input_layout.addWidget(self.date_box)
+        input_layout.addWidget(QLabel("Calories:"))
+        input_layout.addWidget(self.kal_box)
+        input_layout.addWidget(QLabel("Distance:"))
+        input_layout.addWidget(self.distance_box)
+        input_layout.addWidget(QLabel("Description:"))
+        input_layout.addWidget(self.description)
+        input_layout.addWidget(self.add_button)
+
+        # Table Section
         self.table = QTableWidget()
         self.table.setColumnCount(5)
         self.table.setHorizontalHeaderLabels(["ID", "Date", "Calories", "Distance", "Description"])
 
-        # Adding Widgets
-        main_layout.addWidget(QLabel("Workout Date:"))
-        main_layout.addWidget(self.date_box)
-        main_layout.addWidget(QLabel("Calories Burned:"))
-        main_layout.addWidget(self.kal_box)
-        main_layout.addWidget(QLabel("Distance Covered (km):"))
-        main_layout.addWidget(self.distance_box)
-        main_layout.addWidget(QLabel("Description:"))
-        main_layout.addWidget(self.description)
-        main_layout.addWidget(self.add_button)
+        # Graph Section
+        self.figure = Figure()
+        self.canvas = FigureCanvas(self.figure)
+
+        # Add to main layout
+        main_layout.addLayout(input_layout)
         main_layout.addWidget(self.table)
+        main_layout.addWidget(self.canvas)
 
         self.setLayout(main_layout)
 
@@ -294,6 +294,32 @@ class FitTrack(QWidget):
             self.table.setItem(row, 4, QTableWidgetItem(description))
             row += 1
 
+    def update_graph(self):
+        query = QSqlQuery()
+        query.prepare("SELECT date, calories FROM fitness WHERE user = ? ORDER BY date ASC")
+        query.addBindValue(self.current_user)
+        query.exec_()
+
+        dates = []
+        calories = []
+
+        while query.next():
+            dates.append(query.value(0))
+            calories.append(query.value(1))
+
+        # Plot graph
+        self.figure.clear()
+        ax = self.figure.add_subplot(111)
+        ax.plot(dates, calories, marker="o", linestyle="-", color="#5c6bc0")
+        ax.set_title("Calories vs Date", color="#ffffff", fontsize=14)
+        ax.set_xlabel("Date", color="#d1d1e0")
+        ax.set_ylabel("Calories", color="#d1d1e0")
+        ax.tick_params(colors="#d1d1e0")
+
+        # Rotate x-ticks for readability
+        ax.tick_params(axis="x", rotation=45)
+        self.canvas.draw()
+
     def add_workout(self):
         date = self.date_box.date().toString("yyyy-MM-dd")
         calories = self.kal_box.value()
@@ -317,6 +343,7 @@ class FitTrack(QWidget):
 
         if query.exec_():
             self.load_table()
+            self.update_graph()
             self.clear_inputs()
             QMessageBox.information(self, "Success", "Workout added successfully!")
         else:
@@ -327,13 +354,11 @@ class FitTrack(QWidget):
         self.distance_box.clear()
         self.description.clear()
 
-
 # Main application
 def main():
     app = QApplication(sys.argv)
     ex = FitTrack()
     sys.exit(app.exec_())
-
 
 if __name__ == '__main__':
     main()
