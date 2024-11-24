@@ -107,8 +107,8 @@ We’re a passionate team of developers, designers, and analysts. Here’s a bit
 |--------------|-----------------------|------------------------------------------|
 | 🚀 **Anshul Bhathija**     | Project Lead           | [GitHub](https://www.linkedin.com/in/anshul-bhathija-8229b0301/) |
 | 🖥️ **Vaibhav Gupta**     | Design & Code      | [GitHub](https://www.linkedin.com/in/vaibhavguptahere-/) |
-| 🎨 **Durgesh**     | Design & Code    | [GitHub](https://github.com/member3) |
-| 📊 **Aditi**     | Research & Analysis         | [GitHub](https://github.com/member4) |
+| 🎨 **Durgesh**     | Design & Code    | [GitHub](https://www.linkedin.com/in/durgesh-gorana-3685722b9/) |
+| 📊 **Aditi**     | Research & Analysis         | [GitHub](https://www.linkedin.com/in/aditi-tripathi-538157328?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app) |
 
 
 
