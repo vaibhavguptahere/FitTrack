@@ -103,7 +103,7 @@ pip install PyQt5
 
 We’re a passionate team of developers, designers, and analysts. Here’s a bit about us:
 
-| Name         | Role                  | GitHub Profile                           |
+| Name         | Role                  | LinkedIn Profile                           |
 |--------------|-----------------------|------------------------------------------|
 | 🚀 **Anshul Bhathija**     | Project Lead           | [GitHub](https://www.linkedin.com/in/anshul-bhathija-8229b0301/) |
 | 🖥️ **Vaibhav Gupta**     | Design & Code      | [GitHub](https://www.linkedin.com/in/vaibhavguptahere-/) |
